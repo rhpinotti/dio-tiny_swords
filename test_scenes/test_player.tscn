@@ -93,3 +93,9 @@ text = "attack_up_2"
 
 [node name="Player" parent="." instance=ExtResource("2_wx1pq")]
 position = Vector2(205, 185)
+
+[node name="Player2" parent="." instance=ExtResource("2_wx1pq")]
+position = Vector2(85, 296)
+
+[node name="Player3" parent="." instance=ExtResource("2_wx1pq")]
+position = Vector2(309, 300)

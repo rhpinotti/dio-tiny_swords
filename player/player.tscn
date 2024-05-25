@@ -81,3 +81,4 @@ debug_color = Color(0, 0.6, 0.701961, 0.254902)
 libraries = {
 "": SubResource("AnimationLibrary_580x4")
 }
+autoplay = "idle"
