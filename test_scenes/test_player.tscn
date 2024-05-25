@@ -6,7 +6,7 @@
 [node name="TestLayer" type="Node2D"]
 
 [node name="WarriorYellow" type="Sprite2D" parent="."]
-position = Vector2(1114, 737)
+position = Vector2(1845, 187)
 texture = ExtResource("1_ytkh3")
 
 [node name="Label" type="Label" parent="WarriorYellow"]
