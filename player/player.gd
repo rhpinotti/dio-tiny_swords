@@ -12,6 +12,8 @@ var is_attacking: bool = false
 var attack_cooldown: float = 0.0
 
 func _process(delta):
+	GameManager.player_position = position
+	
 	read_input()
 	update_attack_cooldown(delta)
 	play_run_idle_animation()

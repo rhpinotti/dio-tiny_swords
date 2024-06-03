@@ -14,6 +14,10 @@ config/name="TinySwords"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://game_manager.gd"
+
 [input]
 
 move_left={
