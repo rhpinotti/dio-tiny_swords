@@ -20,7 +20,9 @@ func _process(delta):
 	read_input()
 	update_attack_cooldown(delta)
 	play_run_idle_animation()
-	rotate_sprite()
+	
+	if !is_attacking:
+		rotate_sprite()
 		
 	#ataque
 	if Input.is_action_just_pressed("attack"):
@@ -92,4 +94,14 @@ func deal_damage_to_enemies():
 	for body in bodies:
 		if body.is_in_group("enemies"):
 			var enemy: Enemy = body
-			enemy.damage(sword_damage)
+			#calcular dot product
+			var direction_to_enemy = (enemy.position - position).normalized()
+			var attack_direction: Vector2
+			if sprite.flip_h:
+				attack_direction = Vector2.LEFT
+			else:
+				attack_direction = Vector2.RIGHT
+			var dot_product = direction_to_enemy.dot(attack_direction)
+			
+			if dot_product >= 0.3:
+				enemy.damage(sword_damage)
