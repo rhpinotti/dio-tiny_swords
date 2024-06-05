@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://dg11bajogakri"]
+[gd_scene load_steps=3 format=3 uid="uid://dg11bajogakri"]
+
+[ext_resource type="PackedScene" uid="uid://cfbhy4nrstq3v" path="res://player/player.tscn" id="1_l2e3b"]
+[ext_resource type="PackedScene" uid="uid://opxghuugo161" path="res://misc/meat.tscn" id="2_fkjqa"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_l2e3b")]
+position = Vector2(317, 193)
+health = 50
+
+[node name="Meat" parent="." instance=ExtResource("2_fkjqa")]
+position = Vector2(637, 231)
+
+[node name="Meat2" parent="." instance=ExtResource("2_fkjqa")]
+position = Vector2(171, 529)
+
+[node name="Meat3" parent="." instance=ExtResource("2_fkjqa")]
+position = Vector2(675, 427)

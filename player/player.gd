@@ -1,8 +1,11 @@
+class_name Player
+
 extends CharacterBody2D
 
 @export var speed: float = 3
 @export var sword_damage: int = 2
 @export var health: int = 100
+@export var max_health: int = 100
 @export var death_prefab: PackedScene
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -34,6 +37,7 @@ func _process(delta):
 		
 	update_hitbox_detection(delta)
 
+@warning_ignore("unused_parameter")
 func _physics_process(delta: float):
 	# modificar velocidade
 	var target_velocity = input_vector * speed * 100
@@ -123,6 +127,7 @@ func update_hitbox_detection(delta):
 	var bodies = hitbox_area.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("enemies"):
+			@warning_ignore("unused_variable")
 			var enemy: Enemy = body
 			var damage_amount = 1
 			damage(damage_amount)
@@ -150,3 +155,9 @@ func die():
 		get_parent().add_child(death_object)
 	
 	queue_free()
+
+func heal(amount: int) -> int:
+	health += amount
+	if health >= max_health:
+		health = max_health
+	return health
