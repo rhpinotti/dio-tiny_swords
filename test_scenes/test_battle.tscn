@@ -1,30 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2uo4ctgk75m2"]
+[gd_scene load_steps=5 format=3 uid="uid://d2uo4ctgk75m2"]
 
 [ext_resource type="PackedScene" uid="uid://cfbhy4nrstq3v" path="res://player/player.tscn" id="1_7pkwo"]
+[ext_resource type="PackedScene" uid="uid://buv6vfqjiny5s" path="res://enemies/sheep.tscn" id="2_evn1f"]
 [ext_resource type="PackedScene" uid="uid://rjyisyca8pln" path="res://enemies/pawn.tscn" id="2_j5oj6"]
+[ext_resource type="PackedScene" uid="uid://brw8okwafn8us" path="res://enemies/goblin.tscn" id="3_ns87p"]
 
 [node name="TestBattle" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_7pkwo")]
 position = Vector2(577, 302)
 
+[node name="Sheep" parent="." instance=ExtResource("2_evn1f")]
+position = Vector2(228, 132)
+
+[node name="Sheep2" parent="." instance=ExtResource("2_evn1f")]
+position = Vector2(325, 366)
+
+[node name="Sheep3" parent="." instance=ExtResource("2_evn1f")]
+position = Vector2(537, 569)
+
+[node name="Sheep4" parent="." instance=ExtResource("2_evn1f")]
+position = Vector2(98, 222)
+
+[node name="Goblin" parent="." instance=ExtResource("3_ns87p")]
+position = Vector2(979, 231)
+
+[node name="Goblin2" parent="." instance=ExtResource("3_ns87p")]
+position = Vector2(813, 413)
+
+[node name="Goblin3" parent="." instance=ExtResource("3_ns87p")]
+position = Vector2(730, 500)
+
+[node name="Goblin4" parent="." instance=ExtResource("3_ns87p")]
+position = Vector2(1002, 545)
+
+[node name="Goblin5" parent="." instance=ExtResource("3_ns87p")]
+position = Vector2(723, 89)
+
 [node name="Pawn" parent="." instance=ExtResource("2_j5oj6")]
-position = Vector2(212, 294)
-
-[node name="Pawn2" parent="." instance=ExtResource("2_j5oj6")]
-position = Vector2(708, 128)
-
-[node name="Pawn3" parent="." instance=ExtResource("2_j5oj6")]
-position = Vector2(932, 304)
-
-[node name="Pawn4" parent="." instance=ExtResource("2_j5oj6")]
-position = Vector2(1059, 509)
-
-[node name="Pawn5" parent="." instance=ExtResource("2_j5oj6")]
-position = Vector2(670, 612)
-
-[node name="Pawn6" parent="." instance=ExtResource("2_j5oj6")]
-position = Vector2(394, 567)
-
-[node name="Pawn7" parent="." instance=ExtResource("2_j5oj6")]
-position = Vector2(694, 481)
+position = Vector2(257, 277)
