@@ -2,8 +2,15 @@ class_name Player
 
 extends CharacterBody2D
 
+@export_category("Movement")
 @export var speed: float = 3
+@export_category("Sword")
 @export var sword_damage: int = 2
+@export_category("Ritual")
+@export var ritual_damage: int = 1
+@export var ritual_interval: float = 30
+@export var ritual_scene: PackedScene
+@export_category("Life")
 @export var health: int = 100
 @export var max_health: int = 100
 @export var death_prefab: PackedScene
@@ -20,6 +27,7 @@ var is_attacking: bool = false
 var attack_side: bool = false
 var attack_cooldown: float = 0.0
 var hitbox_cooldown: float = 0.0
+var ritual_cooldown: float = 0.0
 
 func _process(delta):
 	GameManager.player_position = position
@@ -36,6 +44,7 @@ func _process(delta):
 		attack()
 		
 	update_hitbox_detection(delta)
+	update_ritual(delta)
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta: float):
@@ -46,13 +55,24 @@ func _physics_process(delta: float):
 	velocity = lerp(velocity, target_velocity, 0.05)
 	move_and_slide()
 
-func update_attack_cooldown(delta):
+func update_attack_cooldown(delta: float):
 	if is_attacking:
 		attack_cooldown -= delta
 		if attack_cooldown <= 0:
 			is_attacking = false
 			is_running = false
 			animation_player.play("idle")
+
+func update_ritual(delta: float):
+	ritual_cooldown -= delta
+	if ritual_cooldown > 0:
+		return
+	
+	ritual_cooldown = ritual_interval
+	
+	var ritual = ritual_scene.instantiate()
+	ritual.damage_amount = ritual_damage
+	add_child(ritual)
 
 func read_input():
 	#obter input vector

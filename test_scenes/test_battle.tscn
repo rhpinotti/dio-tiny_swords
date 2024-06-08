@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2uo4ctgk75m2"]
+[gd_scene load_steps=4 format=3 uid="uid://d2uo4ctgk75m2"]
 
 [ext_resource type="PackedScene" uid="uid://cfbhy4nrstq3v" path="res://player/player.tscn" id="1_7pkwo"]
 [ext_resource type="PackedScene" uid="uid://by710ex7aywg3" path="res://systems/mob_spawner.tscn" id="2_p8euy"]
+[ext_resource type="PackedScene" uid="uid://deaqriude5y0n" path="res://misc/ritual.tscn" id="3_xjnd7"]
 
 [node name="TestBattle" type="Node2D"]
 
@@ -10,3 +11,6 @@ position = Vector2(577, 302)
 
 [node name="MobSpawner" parent="." instance=ExtResource("2_p8euy")]
 mobs_per_minute = 10.0
+
+[node name="Ritual" parent="." instance=ExtResource("3_xjnd7")]
+position = Vector2(588, 275)
