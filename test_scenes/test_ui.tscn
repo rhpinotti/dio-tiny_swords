@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://oyav0k2yock6"]
+[gd_scene load_steps=8 format=3 uid="uid://oyav0k2yock6"]
 
 [ext_resource type="PackedScene" uid="uid://cfbhy4nrstq3v" path="res://player/player.tscn" id="1_qf73r"]
 [ext_resource type="Texture2D" uid="uid://brq0j35ysxt68" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="2_2kbwh"]
+[ext_resource type="PackedScene" uid="uid://brw8okwafn8us" path="res://enemies/goblin.tscn" id="3_0qb8t"]
+[ext_resource type="PackedScene" uid="uid://buv6vfqjiny5s" path="res://enemies/sheep.tscn" id="4_n1q0u"]
+[ext_resource type="PackedScene" uid="uid://rjyisyca8pln" path="res://enemies/pawn.tscn" id="5_2e7as"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_48w1g"]
 texture = ExtResource("2_2kbwh")
@@ -20,7 +23,7 @@ font_color = Color(0.0235294, 0.0235294, 0.0235294, 1)
 [node name="TestUi" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_qf73r")]
-position = Vector2(87, 580)
+position = Vector2(465, 279)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -75,3 +78,15 @@ offset_bottom = -2.5
 grow_vertical = 2
 text = "40 Meat"
 label_settings = SubResource("LabelSettings_lbnxg")
+
+[node name="Goblin" parent="." instance=ExtResource("3_0qb8t")]
+position = Vector2(835, 345)
+
+[node name="Sheep" parent="." instance=ExtResource("4_n1q0u")]
+position = Vector2(77, 574)
+
+[node name="Sheep2" parent="." instance=ExtResource("4_n1q0u")]
+position = Vector2(884, 552)
+
+[node name="Pawn" parent="." instance=ExtResource("5_2e7as")]
+position = Vector2(137, 157)

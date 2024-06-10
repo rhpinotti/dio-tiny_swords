@@ -19,6 +19,7 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var sword_area: Area2D = $SwordArea
 @onready var hitbox_area: Area2D = $HitboxArea
+@onready var health_progress_bar: ProgressBar = $HealthProgressBar
 
 var input_vector: Vector2 = Vector2(0,0)
 var is_running: bool = false
@@ -45,6 +46,8 @@ func _process(delta):
 		
 	update_hitbox_detection(delta)
 	update_ritual(delta)
+	health_progress_bar.max_value = max_health
+	health_progress_bar.value = health
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta: float):

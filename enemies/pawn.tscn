@@ -80,3 +80,6 @@ debug_color = Color(0.498039, 0.898039, 1, 0.419608)
 [node name="FollowPlayer" type="Node" parent="."]
 script = ExtResource("1_qyq6p")
 speed = 0.75
+
+[node name="DamageDigitMarker" type="Marker2D" parent="."]
+position = Vector2(0, -54)
