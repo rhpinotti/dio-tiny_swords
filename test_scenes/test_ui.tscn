@@ -1,83 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://oyav0k2yock6"]
+[gd_scene load_steps=7 format=3 uid="uid://oyav0k2yock6"]
 
 [ext_resource type="PackedScene" uid="uid://cfbhy4nrstq3v" path="res://player/player.tscn" id="1_qf73r"]
-[ext_resource type="Texture2D" uid="uid://brq0j35ysxt68" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="2_2kbwh"]
+[ext_resource type="PackedScene" uid="uid://b5ciinls2ybnt" path="res://ui/game_ui.tscn" id="2_caiw6"]
 [ext_resource type="PackedScene" uid="uid://brw8okwafn8us" path="res://enemies/goblin.tscn" id="3_0qb8t"]
 [ext_resource type="PackedScene" uid="uid://buv6vfqjiny5s" path="res://enemies/sheep.tscn" id="4_n1q0u"]
 [ext_resource type="PackedScene" uid="uid://rjyisyca8pln" path="res://enemies/pawn.tscn" id="5_2e7as"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_48w1g"]
-texture = ExtResource("2_2kbwh")
-texture_margin_left = 31.0
-texture_margin_top = 18.0
-texture_margin_right = 31.0
-texture_margin_bottom = 45.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-region_rect = Rect2(33, 46, 126, 130)
-
-[sub_resource type="LabelSettings" id="LabelSettings_lbnxg"]
-font_size = 18
-font_color = Color(0.0235294, 0.0235294, 0.0235294, 1)
+[ext_resource type="PackedScene" uid="uid://opxghuugo161" path="res://misc/meat.tscn" id="6_e5lm7"]
 
 [node name="TestUi" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_qf73r")]
 position = Vector2(465, 279)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TimerLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -45.5
-offset_right = 45.5
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "08:24"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel2" type="Panel" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -245.0
-offset_top = 8.0
-offset_right = -7.0
-offset_bottom = 71.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_48w1g")
-
-[node name="GoldLabel" type="Label" parent="CanvasLayer/Panel2"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -119.0
-offset_top = -25.5
-offset_right = -28.0
-offset_bottom = -2.5
-grow_horizontal = 0
-grow_vertical = 2
-text = "20.000 Gold"
-label_settings = SubResource("LabelSettings_lbnxg")
-
-[node name="MeatLabel" type="Label" parent="CanvasLayer/Panel2"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 32.0
-offset_top = -25.5
-offset_right = 94.0
-offset_bottom = -2.5
-grow_vertical = 2
-text = "40 Meat"
-label_settings = SubResource("LabelSettings_lbnxg")
+[node name="GameUi" parent="." instance=ExtResource("2_caiw6")]
 
 [node name="Goblin" parent="." instance=ExtResource("3_0qb8t")]
 position = Vector2(835, 345)
@@ -90,3 +25,12 @@ position = Vector2(884, 552)
 
 [node name="Pawn" parent="." instance=ExtResource("5_2e7as")]
 position = Vector2(137, 157)
+
+[node name="Meat" parent="." instance=ExtResource("6_e5lm7")]
+position = Vector2(229, 317)
+
+[node name="Meat2" parent="." instance=ExtResource("6_e5lm7")]
+position = Vector2(537, 531)
+
+[node name="Meat3" parent="." instance=ExtResource("6_e5lm7")]
+position = Vector2(959, 150)

@@ -30,6 +30,11 @@ var attack_cooldown: float = 0.0
 var hitbox_cooldown: float = 0.0
 var ritual_cooldown: float = 0.0
 
+signal meat_collected(value: int)
+
+func _ready():
+	GameManager.player = self
+
 func _process(delta):
 	GameManager.player_position = position
 	
