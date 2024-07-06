@@ -10,6 +10,9 @@ func _ready():
 	sprite = enemy.get_node("AnimatedSprite2D")
 
 func _physics_process(delta):
+	if GameManager.is_game_over:
+		return
+		
 	var input_vector = (GameManager.player_position - enemy.position).normalized()
 	enemy.velocity = input_vector * speed * 100.0
 	enemy.move_and_slide()

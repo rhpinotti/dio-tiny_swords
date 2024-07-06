@@ -45,6 +45,8 @@ func die():
 		death_object.position = position
 		get_parent().add_child(death_object)
 	
+	GameManager.monsters_defeat_counter += 1
+	
 	#drop
 	if randf() <= drop_chance:
 		drop_item()
